@@ -4,8 +4,8 @@ td {
     height: 100px;
 }
 td:hover {
-    background: orange;
+    background:pink;
 }
 table {
-    border:1px soild green;
+    border:px soild green;
 }
