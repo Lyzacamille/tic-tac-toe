@@ -1,8 +1,8 @@
 var currentPlayer = "X";
 var nextPlayer = "O";
 
-var playerXSelections = new Array()
-var playerOSelections = new Array()
+var playerXSelections = new Array();
+var playerOSelections = new Array();
 
 const winningCombinations = [
     [1, 2, 3],
@@ -14,10 +14,10 @@ const winningCombinations = [
     [1, 5, 9],
     [3, 5, 7]
 ]
-handleClick = function (event) {
-    var cell = event.target
+handleClick = function(event) {
+    var cell = event.target;
     console.log(cell.id);
-    currentPlayer = nextPlayer;
+    //currentPlayer = nextPlayer;
 
     cell.innerHTML = currentPlayer;
 
@@ -29,7 +29,12 @@ handleClick = function (event) {
         nextPlayer = "X";
     }
     playerSelections.push(parseInt(cell.id));
-
+    //currentPlayer = nextPlayer;
+    if (currentPlayer === 'X'){
+        alert("Player O Turn");
+    } else {
+        alert("Player X Turn");
+    }
     if (checkWinner(playerSelections)){
         alert("Player" + currentPlayer + "wins!")
         resetGame();
@@ -38,6 +43,7 @@ handleClick = function (event) {
         alert("Draw!");
         resetGame();
     }
+    currentPlayer = nextPlayer;
 }
 var cells = document.querySelectorAll("td");
 
@@ -52,7 +58,7 @@ function checkWinner() {
         matches = 0;
 
         for (j = 0; j < winningCombinations[i].length; j++) {
-            if (playerSelections.incudles(winningCombinations[i][j])) {
+            if (playerSelections.includes(winningCombinations[i][j])) {
                 matches++;
             } else break;
             if (matches == 3) {

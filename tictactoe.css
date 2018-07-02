@@ -1,11 +1,21 @@
 td {
-    border:1px solid blue;
+    border:5px solid pink;
     width: 100px;
     height: 100px;
+    
 }
 td:hover {
-    background:pink;
+    background:orange;
+    cursor: pointer;
+    color: brown
 }
 table {
-    border:px soild green;
+    border:3px solid blueviolet;
+    
+}
+currentPlayer{
+    color: yellowgreen;
+}
+nextPlayer{
+    color: springgreen;
 }
