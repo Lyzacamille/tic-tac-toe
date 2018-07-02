@@ -1,5 +1,7 @@
 td {
-    border:1px;
+    border:1px solid blue;
+    width: 100px;
+    height: 100px;
 }
 td:hover {
     background: orange;
